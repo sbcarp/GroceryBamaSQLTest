@@ -3,6 +3,7 @@ using GroceryBama.MySqlScripts;
 using GroceryBama.Entities;
 using GroceryBama.Exceptions;
 using System.Text.Json;
+using MySql.Data.MySqlClient;
 
 namespace GroceryBamaSQLTest
 {
@@ -14,21 +15,18 @@ namespace GroceryBamaSQLTest
             User user = null;
             try
             {
-                user = usersScript.GetUser("jSmith", "123456");
+                user = usersScript.GetUser("jSmith", "123456 999");
+                Console.WriteLine(JsonSerializer.Serialize(user));
             }
-            catch (UserCredentialNotMatchException)
+            catch (MySqlException ex)
             {
-                Console.WriteLine("User Credential Not Match");
-            }
-            catch (MutipleUsersFoundException)
-            {
-                Console.WriteLine("Found mutiple users");
+                if (ex.Number == 1002) Console.WriteLine("Incorrect username or password");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-            Console.WriteLine(JsonSerializer.Serialize(user));
+            
         }
     }
 }
