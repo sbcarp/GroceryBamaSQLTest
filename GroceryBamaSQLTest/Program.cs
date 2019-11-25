@@ -11,16 +11,17 @@ namespace GroceryBamaSQLTest
     {
         static void Main(string[] args)
         {
-            UsersScript usersScript = new UsersScript();
+            
             try
             {
-
+                UsersScript usersScript = new UsersScript();
                 User user = usersScript.GetUser("jSmith", "123456 999");
                 Console.WriteLine(JsonSerializer.Serialize(user));
             }
             catch (MySqlException ex)
             {
-                if (ex.Number == 1002) Console.WriteLine("Incorrect username or password");
+                if (ex.Number == 5002) Console.WriteLine("Incorrect username or password");
+                else Console.WriteLine(ex);
             }
             catch (Exception ex)
             {
