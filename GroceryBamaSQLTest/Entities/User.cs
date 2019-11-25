@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Runtime.Serialization;
-
 
 namespace GroceryBama.Entities
 {
-    [DataContract]
     public class User
     {
         public string Username { get; set; }
@@ -19,6 +16,7 @@ namespace GroceryBama.Entities
         public string Role { get; set; }
 
         public string Token { get; set; }
+
     }
 
     public class UserCredential

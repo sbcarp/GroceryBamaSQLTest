@@ -12,10 +12,10 @@ namespace GroceryBamaSQLTest
         static void Main(string[] args)
         {
             UsersScript usersScript = new UsersScript();
-            User user = null;
             try
             {
-                user = usersScript.GetUser("jSmith", "123456 999");
+
+                User user = usersScript.GetUser("jSmith", "123456 999");
                 Console.WriteLine(JsonSerializer.Serialize(user));
             }
             catch (MySqlException ex)
