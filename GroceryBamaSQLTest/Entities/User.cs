@@ -20,7 +20,8 @@ namespace GroceryBama.Entities
         public string State { get; set; }
         public string ZipCode { get; set; }
         public int GroceryId { get; set; }
-
+        public List<PaymentMethod> PaymentMethods { get; set; }
+        public int DefaultPaymentMethodId { get; set; }
     }
 
     public class UserCredential
