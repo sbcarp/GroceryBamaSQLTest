@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
 namespace GroceryBama.Entities
 {
@@ -19,9 +16,10 @@ namespace GroceryBama.Entities
         public string Description { get; set; }
         public string PictureUrl { get; set; }
     }
-    public class ItemToCart
+    public class ItemParams
     {
-        public int Id { get; set; }
+        public int ItemId { get; set; }
+        public int GroceryId { get; set; }
         public int Quantity { get; set; }
     }
 }

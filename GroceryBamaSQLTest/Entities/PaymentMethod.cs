@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace GroceryBama.Entities
 {
@@ -13,5 +9,6 @@ namespace GroceryBama.Entities
         public string Name { get; set; }
         public string AccountNumber { get; set; }
         public string RoutineNumber { get; set; }
+        public bool IsDefault { get; set; }
     }
 }
